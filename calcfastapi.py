@@ -3,6 +3,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+
 class Calculation(BaseModel):
     num1: float
     num2: float
