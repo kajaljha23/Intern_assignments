@@ -8,6 +8,7 @@ class Calculation(BaseModel):
     num2: float
     operator: str
 
+
 @app.post("/calculate")
 async def calculate(calculation: Calculation):
     num1 = calculation.num1
