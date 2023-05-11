@@ -1,9 +1,18 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
-from scripts.utility import mongodb
+
+from pymongo import MongoClient  # import mongo client to connect
+
+# Creating instance of mongo client
+client = MongoClient("mongodb://intern_23:intern%40123@192.168.0.220:2717/interns_b2_23")
+# Creating database
+db = client.interns_b2_23
+
+# # Creating document
+inventory = db.Kajal_kumari
+
 app = FastAPI()
-inventory_list = []
 
 
 @app.get("/")
@@ -14,12 +23,11 @@ async def hello():
 class Inventory(BaseModel):
     category: str
     product_id: int
-    product_name: Optional[str] = None
     quantity: int
     price: int
 
 
 @app.post("/add_product")
-async def items(inventory: Inventory):
-    inventory_list.append(inventory)
-    return {"Inventory": inventory_list}
+async def items(inventor: Inventory):
+    inventory.insert_one(inventor.dict())
+    return {"Successful"}
