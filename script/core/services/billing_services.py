@@ -2,6 +2,7 @@ from fastapi import APIRouter
 
 from script.core.handlers.billing_handler import ItemHandler
 from script.utility.mongodb import Item
+from script.core.handlers.email_handler import send_email, Email
 
 item_router = APIRouter()
 
@@ -28,3 +29,9 @@ def update_item(item_id: int, item: Item):
 def delete_item(item_id: int):
     item_object = ItemHandler()
     return item_object.delete_data(item_id)
+
+
+@item_router.post("/send_email")
+def send_item(email: Email):
+    send_email(email)
+    return {"message": "email sent"}
