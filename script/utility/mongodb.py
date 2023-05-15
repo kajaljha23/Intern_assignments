@@ -56,5 +56,5 @@ def delete_item(item_id: int):
     return {"message": "deleted"}
 
 
-def pipeline_aggregation(pipeline:list):
+def pipeline_aggregation(pipeline: list):
     return billing.aggregate(pipeline)

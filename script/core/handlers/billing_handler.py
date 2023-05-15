@@ -39,4 +39,5 @@ class ItemHandler:
             }
         ])
         print(data)
+        # logger.info(f"Executing Query: {data}")
         return list(data)[0]['total']

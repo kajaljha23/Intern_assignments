@@ -33,11 +33,15 @@ def delete_item(item_id: int):
 
 @item_router.post("/send_email")
 def send_item(email: Email):
-    send_email(email)
+    item_handler = ItemHandler()
+    result = item_handler.pipeline_aggregation()
+    message = f"total amount is {result}"
+    send_email(message, email)
     return {"message": "email sent"}
 
 
 @item_router.get("/billing-price")
 def get_billing():
     item_handler = ItemHandler()
-    return item_handler.pipeline_aggregation()
+    result = item_handler.pipeline_aggregation()
+    return result

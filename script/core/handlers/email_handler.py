@@ -10,7 +10,7 @@ class Email(BaseModel):
     body: str
 
 
-def send_email(email: Email):
+def send_email(body, email: Email):
     sender_email = "k.kajal1115@gmail.com"
     sender_password = "uvjrhssxhwrwrapo"
     receiver_email = email.rec_email
@@ -18,9 +18,9 @@ def send_email(email: Email):
     message = MIMEMultipart()
     message["From"] = sender_email
     message["To"] = receiver_email
-    message["Subject"] = email.subject
+    message["Subject"] = "total price of inventory things"
 
-    message.attach(MIMEText(email.body, "plain"))
+    message.attach(MIMEText(str(body), "plain"))
 
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
