@@ -1,4 +1,4 @@
-from script.utility.mongodb import read_item, create_item, update_item, delete_item, Item
+from script.utility.mongodb import read_item, create_item, update_item, delete_item, Item, pipeline_aggregation
 
 
 class ItemHandler:
@@ -14,3 +14,29 @@ class ItemHandler:
 
     def delete_data(self, item_id: int):
         return delete_item(item_id)
+
+    def pipeline_aggregation(self):
+        data = pipeline_aggregation([
+            {
+                '$addFields': {
+                    'total_amount': {
+                        '$multiply': [
+                            '$quantity', '$cost'
+                        ]
+                    }
+                }
+            }, {
+                '$group': {
+                    '_id': None,
+                    'total': {
+                        '$sum': '$total_amount'
+                    }
+                }
+            }, {
+                '$project': {
+                    '_id': 0
+                }
+            }
+        ])
+        print(data)
+        return list(data)[0]['total']

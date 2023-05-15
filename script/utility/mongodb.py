@@ -1,16 +1,24 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from pymongo import MongoClient   # import mongo client to connect
+from pymongo import MongoClient  # import mongo client to connect
+
+# from configuration import DBConf
+#
+# MONGO_URI = DBConf.MONGO_URI
+# try:
+#     client = MongoClient(MONGO_URI)
+#     print("connected")
+# except:
+#     print("default")
 
 app = FastAPI()
-
 
 # Creating instance of mongo client
 client = MongoClient("mongodb://intern_23:intern%40123@192.168.0.220:2717/interns_b2_23")
 # Creating database
-db = client.interns_b2_23
+db = client["interns_b2_23"]
 # # Creating document
-billing = db.kajalk_billing
+billing = db["kajalk_billing"]
 
 
 # creating class
@@ -46,3 +54,7 @@ def update_item(item_id: int, item: Item):
 def delete_item(item_id: int):
     billing.delete_one({"id": item_id})
     return {"message": "deleted"}
+
+
+def pipeline_aggregation(pipeline:list):
+    return billing.aggregate(pipeline)
