@@ -1,0 +1,32 @@
+[
+  {
+    "avg": "2.56",
+    "max": "6.87",
+    "min": "2.28",
+    "parameterName": "BOD"
+  },
+  {
+    "avg": "21.37",
+    "max": "57.26",
+    "min": "18.98",
+    "parameterName": "COD"
+  },
+  {
+    "avg": "1080.00",
+    "max": "1080.00",
+    "min": "1080.00",
+    "parameterName": "Flow"
+  },
+  {
+    "avg": "1.45",
+    "max": "1.95",
+    "min": "1.28",
+    "parameterName": "TSS"
+  },
+  {
+    "avg": "7.33",
+    "max": "7.40",
+    "min": "7.29",
+    "parameterName": "pH"
+  }
+]
