@@ -1,16 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from pymongo import MongoClient  # import mongo client to connect
+from script.constants.app_constants import DBConf
 
-# from configuration import DBConf
-#
-# MONGO_URI = DBConf.MONGO_URI
-# try:
-#     client = MongoClient(MONGO_URI)
-#     print("connected")
-# except:
-#     print("default")
-
+MONGO_URI = DBConf.MONGO_URI
 app = FastAPI()
 
 # Creating instance of mongo client
