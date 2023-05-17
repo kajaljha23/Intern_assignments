@@ -4,7 +4,7 @@ class APis:
     create_api = '/items/creating_new_item'
     update_api = '/items/{items_id}'
     delete_api = '/delete/{items_id}'
-    send_api = '/sending_email'
+    send_api = '/send_email'
     get_api = '/total_billing'
 
 

@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from script.core.handlers.billing_handler import ItemHandler
 from script.utility.mongodb import Item
-from script.core.handlers.email_handler import sending_email, Email
+from script.core.handlers.email_handler import send_email, Email
 
 item_router = APIRouter()
 
@@ -31,11 +31,11 @@ def deleting_things(item_id: int):
 
 
 @item_router.post("/send_email")
-def sending_email(email: Email):
+def send_item(email: Email):
     item_handler = ItemHandler()
     result = item_handler.pipeline_aggregation()
     message = f"total amount is {result}"
-    sending_email(message, email)
+    send_email(message, email)
     return {"message": "email sent"}
 
 
