@@ -7,7 +7,7 @@ MONGO_URI = DBConf.MONGO_URI
 app = FastAPI()
 
 # Creating instance of mongo client
-client = MongoClient("mongodb://intern_23:intern%40123@192.168.0.220:2717/interns_b2_23")
+client = MongoClient(MONGO_URI)
 # Creating database
 db = client["interns_b2_23"]
 # # Creating document
