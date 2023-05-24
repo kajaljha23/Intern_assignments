@@ -1,0 +1,22 @@
+2023-05-24 10:46:51,978 - INFO - main.py:14 - <module> - main: main file started
+2023-05-24 10:47:42,850 - INFO - billing_services.py:64 - send_item - services:send_item
+2023-05-24 10:47:42,858 - INFO - billing_handler.py:69 - pipeline_aggregation - Handler:pipeline_aggregation
+2023-05-24 10:47:42,858 - INFO - mongo_query.py:68 - pipeline_aggregation - mongo_query:pipeline_aggregation
+2023-05-24 10:47:42,908 - INFO - email_handler.py:25 - send_email - Handlers:send_email
+2023-05-24 10:47:46,422 - ERROR - email_handler.py:36 - send_email - Exception in send_email: 'NoneType' object has no attribute 'encode'
+2023-05-24 10:47:46,429 - INFO - billing_services.py:69 - send_item - send_item: Email Sent
+2023-05-24 10:51:14,846 - INFO - main.py:18 - <module> - main: main file started
+2023-05-24 10:59:01,903 - INFO - main.py:18 - <module> - main: main file started
+2023-05-24 10:59:51,936 - INFO - billing_services.py:64 - send_item - services:send_item
+2023-05-24 10:59:51,942 - INFO - billing_handler.py:68 - pipeline_aggregation - Handler:pipeline_aggregation
+2023-05-24 10:59:51,943 - INFO - mongo_query.py:68 - pipeline_aggregation - mongo_query:pipeline_aggregation
+2023-05-24 10:59:52,011 - INFO - email_handler.py:25 - send_email - Handlers:send_email
+2023-05-24 10:59:53,901 - ERROR - email_handler.py:36 - send_email - Exception in send_email: 'NoneType' object has no attribute 'encode'
+2023-05-24 10:59:53,901 - INFO - billing_services.py:69 - send_item - send_item: Email Sent
+2023-05-24 11:02:25,449 - INFO - main.py:18 - <module> - main: main file started
+2023-05-24 11:02:58,555 - INFO - billing_services.py:64 - send_item - services:send_item
+2023-05-24 11:02:58,562 - INFO - billing_handler.py:68 - pipeline_aggregation - Handler:pipeline_aggregation
+2023-05-24 11:02:58,563 - INFO - mongo_query.py:68 - pipeline_aggregation - mongo_query:pipeline_aggregation
+2023-05-24 11:02:58,621 - INFO - email_handler.py:25 - send_email - Handlers:send_email
+2023-05-24 11:03:01,910 - INFO - email_handler.py:33 - send_email - send_email:Email sent successfully
+2023-05-24 11:03:01,911 - INFO - billing_services.py:69 - send_item - send_item: Email Sent
